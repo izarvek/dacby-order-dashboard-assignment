@@ -295,12 +295,27 @@ x-scheduler-secret: YOUR_SECRET_KEY
 
 ## Orders
 
-| Method | Endpoint                    | Description   |
-| ------ | --------------------------- | ------------- |
-| POST   | `/api/orders`               | Create Order  |
-| GET    | `/api/orders`               | Get Orders    |
-| GET    | `/api/orders?status=PLACED` | Filter Orders |
-| GET    | `/api/orders/:id`           | Get Order     |
+### Use : 
+PORT=5000
+
+MONGO_URI=mongodb://127.0.0.1:27017/order_management
+
+CLIENT_URL=http://localhost:5173
+
+SCHEDULER_SECRET_KEY=your_super_secret_key
+
+NODE_ENV=development
+
+| Method | Endpoint                            | Description        |
+| ------ | ---------------------------         | ------------------ |
+| POST   | `/api/orders`                       | Create Order       |
+| GET    | `/api/orders`                       | Get Orders         |
+| GET    | `/api/orders?status=PLACED`         | Filter Orders      |
+| GET    | `/api/orders?status=PROCESSING`     | Filter Orders      |
+| GET    | `/api/orders?status=READY_TO_SHIP`  | Filter Orders      |
+| GET    | `/api/orders/:id`                   | Get Order By ID    |
+| PATCH  | `/api/orders/:id`                   | Update Order By ID |
+| DELETE | `/api/orders/:id`                   | Delete Order By ID |
 
 ---
 
@@ -309,6 +324,9 @@ x-scheduler-secret: YOUR_SECRET_KEY
 | Method | Endpoint             | Description       |
 | ------ | -------------------- | ----------------- |
 | POST   | `/api/scheduler/run` | Execute Scheduler |
+
+### NOTE : 
+x-secret-key : your_super_secret_key
 
 ---
 
