@@ -1,4 +1,4 @@
-import Order from "../models/Order.js";
+import Order from "../models/order.model.js";
 import StatusHistory from "../models/status.history.model.js";
 import SchedulerLog from "../models/schedulerlog.model.js";
 
