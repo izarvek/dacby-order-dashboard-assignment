@@ -4,10 +4,14 @@ import SchedulerLog from "../models/schedulerlog.model.js";
 
 class SchedulerService {
   async runScheduler() {
+    console.log("Scheduler Started");
+
     const log = await SchedulerLog.create({
       startedAt: new Date(),
       status: "SUCCESS",
     });
+
+    console.log(log);
 
     try {
       const now = new Date();
