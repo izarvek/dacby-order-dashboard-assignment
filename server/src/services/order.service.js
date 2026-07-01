@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import Order from "../models/order.model";
+import Order from "../models/order.model.js";
 
 class OrderService {
   async createOrder(orderData) {
